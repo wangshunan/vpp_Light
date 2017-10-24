@@ -340,6 +340,7 @@ public class LightTest2 : MonoBehaviour
         lightMesh.Clear();
         lightMesh.vertices = iniVerticesMeshLight;
 
+
         Vector2[] uvs = new Vector2[iniVerticesMeshLight.Length];
 
         for (int i = 0; i < iniVerticesMeshLight.Length; i++)

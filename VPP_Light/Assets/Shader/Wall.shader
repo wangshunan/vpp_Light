@@ -1,4 +1,4 @@
-﻿Shader "Custom/Obj" {
+﻿Shader "Custom/Wall" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
@@ -6,13 +6,8 @@
 		_Metallic ("Metallic", Range(0,1)) = 0.0
 	}
 	SubShader {
-		Tags { "RenderType"="Opaque" }
+		Tags { "RenderType"="Opaque" "Queue" = "Transparent+100" }
 		LOD 200
-
-		Stencil{
-			Ref 1
-			Comp equal
-		}
 		
 		CGPROGRAM
 		// Physically based Standard lighting model, and enable shadows on all light types

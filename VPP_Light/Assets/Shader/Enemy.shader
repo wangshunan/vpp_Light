@@ -1,4 +1,4 @@
-﻿Shader "Custom/Obj" {
+﻿Shader "Custom/Enemy" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
@@ -6,7 +6,7 @@
 		_Metallic ("Metallic", Range(0,1)) = 0.0
 	}
 	SubShader {
-		Tags { "RenderType"="Opaque" }
+		Tags { "RenderType"="Opaque" "Queue" = "Transparent" }
 		LOD 200
 
 		Stencil{

@@ -14,8 +14,7 @@ Shader "2D Dynamic Lights/Gradient/ZFighting" {
 		//ZTest always
 		//Tags { Queue = Transparent }
 
-		Tags{ "RenderType" = "Opaque" "Queue" = "Transparent" }
-		ColorMask 0
+		Tags{ "RenderType" = "Opaque" "Queue" = "Transparent-100" }
 		LOD 200
 
 		Stencil{
@@ -39,7 +38,7 @@ Shader "2D Dynamic Lights/Gradient/ZFighting" {
 						
 
 			CGPROGRAM
-			#pragma target 2.0
+			#pragma target 3.0
 			#pragma fragment frag
 			#pragma vertex vert	
 			#include "UnityCG.cginc"
@@ -80,7 +79,7 @@ Shader "2D Dynamic Lights/Gradient/ZFighting" {
 			}
 
 
-			fixed4 frag(VertexToFragment i) : COLOR {
+			fixed4 frag(VertexToFragment i) : COLOR {			
 				return fixed4(lerp(_Color,fixed4(_Color.rgb,0),sqrt( (i.uv.x*i.uv.x)+(i.uv.y*i.uv.y) )+_Offset ));
 			}
 
